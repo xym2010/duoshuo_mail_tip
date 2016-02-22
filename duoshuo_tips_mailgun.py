@@ -12,6 +12,7 @@ sys.setdefaultencoding('utf-8')
 data_file = "./save_file.txt"
 
 def send_message(content):
+    """使用mailgun发送邮件"""
     return requests.post(
         "https://api.mailgun.net/v3/sandboxbabf1dca6cb14b46909cea514ac9c90a.mailgun.org/messages",
         auth=("api", "xxxxx"),
@@ -28,6 +29,7 @@ def get_last_id():
         for line in f:
             return int(line)
         return 0
+
 
 def set_last_id(last_id):
     with open(data_file, "w") as f:

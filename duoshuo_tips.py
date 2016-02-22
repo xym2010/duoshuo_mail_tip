@@ -18,6 +18,7 @@ MAIL_USER = "xxx@163.com"
 MAIL_PWD = "xxxxx"
 
 def send_mail(to_list, sub, content):
+    """使用smtp发邮件"""
     me = "xxxxx@163.com"
     msg = MIMEText(content, _subtype="plain", _charset="gb2312")
     msg['Subject'] = sub
@@ -40,6 +41,7 @@ def get_last_id():
         for line in f:
             return int(line)
         return 0
+
 
 def set_last_id(last_id):
     with open(data_file, "w") as f:
